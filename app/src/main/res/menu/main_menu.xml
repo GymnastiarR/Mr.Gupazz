@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/exercise"
+        android:icon="@drawable/ic_exercise"
+        android:title="@string/menu_exercise"/>
+    <item android:id="@+id/learning"
+        android:icon="@drawable/ic_learning"
+        android:title="@string/menu_learning" />
+    <item android:id="@+id/ai_assistant"
+        android:icon="@drawable/ic_learning"
+        android:title="@string/menu_ai_assistant" />
+    <item android:id="@+id/profile"
+        android:icon="@drawable/ic_learning"
+        android:title="@string/menu_ai_assistant" />
+</menu>
