@@ -1,9 +1,146 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+
+    <!-- <style name="Base.Theme.MrGupazz" parent="Theme.Material3.DayNight.NoActionBar"> -->
     <style name="Base.Theme.MrGupazz" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorSecondaryContainer">@color/primary_white</item>
     </style>
+
+    <!-- Tema Elemen-elemen MR.GUPAZZ -->
+    <style name="Base.Theme.MrGupazz." parent="Base.Theme.MrGupazz">
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorSecondaryContainer">@color/primary_white</item>
+    </style>
+
+    <!-- BUTTON -->
+    <style name="MediumButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">299dp</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+    </style>
+
+    <style name="MediumButton.Blue" parent="MediumButton">
+        <item name="android:backgroundTint">@color/primary_blue</item>
+    </style>
+
+    <style name="MediumButton.Red" parent="MediumButton">
+        <item name="android:backgroundTint">@color/secondary_red_1</item>
+    </style>
+
+    <style name="MediumButton.Pink" parent="MediumButton">
+        <item name="android:backgroundTint">@color/secondary_red_2</item>
+    </style>
+
+    <style name="LongButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">325dp</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textColor">@color/secondary_shade_1</item>
+        <item name="android:backgroundTint">@color/secondary_shade_8</item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+    </style>
+
+    <style name="RegularButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">180dp</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textColor">@color/secondary_shade_1</item>
+        <item name="android:backgroundTint">@color/secondary_shade_8</item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+    </style>
+
+    <style name="SmallButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">142dp</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+    </style>
+
+    <style name="SmallButton.Blue" parent="MediumButton">
+        <item name="android:backgroundTint">@color/secondary_shade_1</item>
+    </style>
+
+    <style name="SmallButton.LightBlue" parent="MediumButton">
+        <item name="android:backgroundTint">@color/secondary_blue_2</item>
+    </style>
+    <!-- BUTTON -->
+
+    <!-- TEXT -->
+    <style name="Text">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Text.Bold24sp" parent="Text">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.SemiBold" parent="Text">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+    </style>
+
+    <style name="Text.SemiBold.24sp" parent="Text.SemiBold">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.SemiBold.20sp" parent="Text.SemiBold">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text.SemiBold.16sp" parent="Text.SemiBold">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.SemiBold.14sp" parent="Text.SemiBold">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.SemiBold.12sp" parent="Text.SemiBold">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Medium" parent="Text">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="Text.Medium.16sp" parent="Text.Medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Medium.14sp" parent="Text.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Regular" parent="Text">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="Text.Regular.16sp" parent="Text.Regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Regular.15sp" parent="Text.Regular">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.Regular.14sp" parent="Text.Regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Regular.12sp" parent="Text.Regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- TEXT -->
 
     <style name="Theme.MrGupazz" parent="Base.Theme.MrGupazz" />
 </resources>
