@@ -133,11 +133,10 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent">
                 <com.google.android.material.button.MaterialButton
+                    style="@style/MediumButton.Blue"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="Check"
+                    android:text="@string/check"
                     app:cornerRadius="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     android:backgroundTint="@color/primary_blue"/>
             </LinearLayout>
         </LinearLayout>
