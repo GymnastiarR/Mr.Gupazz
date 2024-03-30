@@ -4,4 +4,5 @@
     <string name="menu_learning">Learning</string>
     <string name="menu_ai_assistant">AI Assistant</string>
     <string name="menu_profile">Profile</string>
+    <string name="completing">Completing</string>
 </resources>
