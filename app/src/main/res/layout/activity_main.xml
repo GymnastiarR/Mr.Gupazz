@@ -38,25 +38,18 @@
         android:text="Get Started"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/rounded" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/to_loginPage"
+        android:id="@+id/to_loginpage"
         style="@style/MediumButton"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:background="@drawable/rounded"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="15dp"
         android:text="I already have an account"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_signupPage"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
