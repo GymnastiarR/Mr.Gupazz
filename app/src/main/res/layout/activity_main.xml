@@ -29,27 +29,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_gupazz" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/to_signupPage"
         style="@style/MediumButton.Blue"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginBottom="112dp"
         android:text="Get Started"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
-        android:id="@+id/to_loginpage"
-        style="@style/MediumButton"
+    <com.google.android.material.button.MaterialButton
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:id="@+id/to_loginpage"
+        style="@style/MediumButton"
         android:layout_marginTop="15dp"
+        app:cornerRadius="10dp"
         android:text="I already have an account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/to_signupPage"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/to_signupPage"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
