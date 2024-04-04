@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".learningactivityfragment.LearningWord">
 
-
     <TextView
         android:id="@+id/tv_title"
         style="@style/Text.SemiBold.24sp"
