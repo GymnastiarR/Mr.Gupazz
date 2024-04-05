@@ -4,4 +4,10 @@
     <string name="menu_learning">Learning</string>
     <string name="menu_ai_assistant">AI Assistant</string>
     <string name="menu_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="completing">Completing</string>
+    <string name="check">Check</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>
