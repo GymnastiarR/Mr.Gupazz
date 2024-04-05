@@ -12,8 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MrGupazz"
         tools:targetApi="31">
+
         <activity
             android:name=".ProfileActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".InitialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signup"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+
+        <activity
+            android:name=".CompletingActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".WritingActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
