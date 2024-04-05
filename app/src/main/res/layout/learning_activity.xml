@@ -22,14 +22,12 @@
             android:textSize="24dp"
             android:layout_marginBottom="20dp"/>
 
-        <!-- Baris Pertama -->
         <LinearLayout
             android:id="@+id/row_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- RelativeLayout untuk huruf D -->
             <RelativeLayout
                 android:id="@+id/rel_d"
                 android:layout_width="0dp"
@@ -61,7 +59,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf E -->
             <RelativeLayout
                 android:id="@+id/rel_e"
                 android:layout_width="0dp"
@@ -94,7 +91,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf F -->
             <RelativeLayout
                 android:id="@+id/rel_f"
                 android:layout_width="0dp"
@@ -129,14 +125,12 @@
 
         </LinearLayout>
 
-        <!-- Baris Kedua -->
         <LinearLayout
             android:id="@+id/row_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- RelativeLayout untuk huruf G -->
             <RelativeLayout
                 android:id="@+id/rel_g"
                 android:layout_width="0dp"
@@ -169,7 +163,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf H -->
             <RelativeLayout
                 android:id="@+id/rel_h"
                 android:layout_width="0dp"
@@ -202,7 +195,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf I -->
             <RelativeLayout
                 android:id="@+id/rel_i"
                 android:layout_width="0dp"
@@ -235,19 +227,14 @@
 
             </RelativeLayout>
 
-
         </LinearLayout>
 
-
-        <!-- Anda dapat menambahkan baris-baris huruf berikutnya sesuai kebutuhan -->
-    <!-- Baris Ketiga -->
     <LinearLayout
         android:id="@+id/row_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- RelativeLayout untuk huruf J -->
         <RelativeLayout
             android:id="@+id/rel_j"
             android:layout_width="0dp"
@@ -279,7 +266,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf K -->
         <RelativeLayout
             android:id="@+id/rel_k"
             android:layout_width="0dp"
@@ -311,7 +297,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf L -->
         <RelativeLayout
             android:id="@+id/rel_l"
             android:layout_width="0dp"
@@ -345,14 +330,12 @@
 
     </LinearLayout>
 
-    <!-- Baris Keempat -->
     <LinearLayout
         android:id="@+id/row_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- RelativeLayout untuk huruf M -->
         <RelativeLayout
             android:id="@+id/rel_m"
             android:layout_width="0dp"
@@ -384,7 +367,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf N -->
         <RelativeLayout
             android:id="@+id/rel_n"
             android:layout_width="0dp"
@@ -416,7 +398,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf O -->
         <RelativeLayout
             android:id="@+id/rel_o"
             android:layout_width="0dp"
@@ -449,14 +430,13 @@
         </RelativeLayout>
 
     </LinearLayout>
-    <!-- Baris Kelima -->
+
     <LinearLayout
         android:id="@+id/row_5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- RelativeLayout untuk huruf P -->
         <RelativeLayout
             android:id="@+id/rel_p"
             android:layout_width="0dp"
@@ -488,7 +468,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf Q -->
         <RelativeLayout
             android:id="@+id/rel_q"
             android:layout_width="0dp"
@@ -520,7 +499,6 @@
 
         </RelativeLayout>
 
-        <!-- RelativeLayout untuk huruf R -->
         <RelativeLayout
             android:id="@+id/rel_r"
             android:layout_width="0dp"
@@ -554,14 +532,12 @@
 
     </LinearLayout>
 
-    <!-- Baris Keenam -->
         <LinearLayout
             android:id="@+id/row_6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <!-- RelativeLayout untuk huruf S -->
             <RelativeLayout
                 android:id="@+id/rel_s"
                 android:layout_width="0dp"
@@ -593,7 +569,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf T -->
             <RelativeLayout
                 android:id="@+id/rel_t"
                 android:layout_width="0dp"
@@ -625,7 +600,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf U -->
             <RelativeLayout
                 android:id="@+id/rel_u"
                 android:layout_width="0dp"
@@ -658,14 +632,13 @@
             </RelativeLayout>
 
         </LinearLayout>
-        <!-- Baris Ketujuh -->
+
         <LinearLayout
             android:id="@+id/row_7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- RelativeLayout untuk huruf V -->
             <RelativeLayout
                 android:id="@+id/rel_v"
                 android:layout_width="0dp"
@@ -697,7 +670,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf W -->
             <RelativeLayout
                 android:id="@+id/rel_w"
                 android:layout_width="0dp"
@@ -729,7 +701,6 @@
 
             </RelativeLayout>
 
-            <!-- RelativeLayout untuk huruf X -->
             <RelativeLayout
                 android:id="@+id/rel_x"
                 android:layout_width="0dp"
@@ -762,16 +733,12 @@
             </RelativeLayout>
 
         </LinearLayout>
-        <!-- Baris Kedelapan -->
+
         <LinearLayout
             android:id="@+id/row_8"
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:orientation="horizontal">
-
-            <!-- RelativeLayout untuk huruf Y -->
-
-            <!-- RelativeLayout untuk huruf Z -->
             <RelativeLayout
                 android:id="@+id/rel_y"
                 android:layout_width="2dp"
@@ -781,7 +748,6 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/background_alphabet">
-
                 <TextView
                     android:id="@+id/y"
                     style="@style/Text.Bold24sp"
@@ -835,12 +801,11 @@
                     android:gravity="center_horizontal"
                     android:text="1581 Words"
                     android:textColor="@color/primary_blue" />
-
             </RelativeLayout>
 
         </LinearLayout>
 
-
     </LinearLayout>
+
 </ScrollView>
 
