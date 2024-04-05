@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".learningactivityfragment.LearningWord">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Text.SemiBold.24sp"
+        android:textColor="@color/secondary_shade_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Generous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_word"
+        style="@style/Text.SemiBold.24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Generous"
+        android:textColor="@color/secondary_blue_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_clause"
+        style="@style/Text.Regular.16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Adjective"
+        android:textColor="@color/secondary_blue_2"
+        app:layout_constraintEnd_toEndOf="@+id/tv_word"
+        app:layout_constraintStart_toStartOf="@+id/tv_word"
+        app:layout_constraintTop_toBottomOf="@+id/tv_word" />
+
+    <TextView
+        android:id="@+id/tv_help"
+        style="@style/Text.SemiBold.20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="How to pronounce"
+        android:textColor="@color/secondary_shade_6"
+        app:layout_constraintEnd_toEndOf="@+id/tv_clause"
+        app:layout_constraintStart_toStartOf="@+id/tv_clause"
+        app:layout_constraintTop_toBottomOf="@+id/tv_clause" />
+
+    <TextView
+        android:id="@+id/tv_pronounce"
+        style="@style/Text.SemiBold.24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="ˈjen(ə)rəs"
+        android:textColor="@color/secondary_shade_1"
+        app:layout_constraintEnd_toEndOf="@+id/tv_help"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/tv_help"
+        app:layout_constraintTop_toBottomOf="@+id/tv_help" />
+
+    <TextView
+        android:id="@+id/tv_meaning"
+        style="@style/Text.SemiBold.20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Meaning"
+        android:textColor="@color/secondary_shade_6"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pronounce"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/tv_pronounce"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pronounce" />
+
+    <TextView
+        android:id="@+id/tv_bahasa"
+        style="@style/Text.SemiBold.24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Dermawan"
+        android:textColor="@color/secondary_shade_1"
+        app:layout_constraintEnd_toEndOf="@+id/tv_meaning"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/tv_meaning"
+        app:layout_constraintTop_toBottomOf="@+id/tv_meaning" />
+
+    <Button
+        android:id="@+id/btn_previous"
+        style="@style/SmallButton.LightBlue"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="84dp"
+        android:text="previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bahasa" />
+
+    <Button
+        android:id="@+id/btn_next"
+        style="@style/SmallButton.Blue"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="84dp"
+        android:text="next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toEndOf="@+id/btn_previous"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bahasa" />
+</androidx.constraintlayout.widget.ConstraintLayout>
