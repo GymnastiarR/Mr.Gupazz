@@ -42,4 +42,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.fragment:fragment:1.6.2")
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.android.volley:volley:1.2.1")
 }
