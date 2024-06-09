@@ -1,6 +1,6 @@
-package com.example.mrgupazz.model;
+package com.example.mrgupazz.api.groupquestion;
 
-public class GroupQuestionModel {
+public class GroupQuestion {
     protected int id;
     protected String type;
 

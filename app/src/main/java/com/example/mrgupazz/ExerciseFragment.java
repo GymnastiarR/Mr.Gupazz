@@ -19,8 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.mrgupazz.adapters.GroupQuestionAdapter;
-import com.example.mrgupazz.model.GroupQuestionModel;
+import com.example.mrgupazz.adapter.GroupQuestionAdapter;
+import com.example.mrgupazz.api.groupquestion.GroupQuestion;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExerciseFragment extends Fragment {
-    ArrayList<GroupQuestionModel> groupQuestionList = new ArrayList<>();
+    ArrayList<GroupQuestion> groupQuestionList = new ArrayList<>();
     GroupQuestionAdapter groupQuestionAdapter;
     RecyclerView recyclerView;
     @Nullable
@@ -58,10 +58,10 @@ public class ExerciseFragment extends Fragment {
                         JSONObject jsonObject = result.getJSONObject(i);
                         Log.d("my-api","==== "+jsonObject.getString("type"));
                         Log.d("my-api","==== "+jsonObject.getString("id"));
-                        GroupQuestionModel groupQuestionModel = new GroupQuestionModel();
-                        groupQuestionModel.setId(Integer.parseInt(jsonObject.getString("id")));
-                        groupQuestionModel.setType(jsonObject.getString("type"));
-                        groupQuestionList.add(groupQuestionModel);
+                        GroupQuestion groupQuestion = new GroupQuestion();
+                        groupQuestion.setId(Integer.parseInt(jsonObject.getString("id")));
+                        groupQuestion.setType(jsonObject.getString("type"));
+                        groupQuestionList.add(groupQuestion);
                     }
                 }catch (Exception e){
                     e.printStackTrace();
@@ -77,7 +77,7 @@ public class ExerciseFragment extends Fragment {
             }
         }){
             public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd5bW5hc0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciJ9.wg-RBSQNGjzo21GwpPWbaFqU0QEudhw8twq9b2g6PxA");
                 return params;

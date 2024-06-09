@@ -1,4 +1,4 @@
-package com.example.mrgupazz.adapters;
+package com.example.mrgupazz.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,14 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mrgupazz.R;
-import com.example.mrgupazz.model.GroupQuestionModel;
+import com.example.mrgupazz.api.groupquestion.GroupQuestion;
 
 import java.util.ArrayList;
 
 public class GroupQuestionAdapter extends RecyclerView.Adapter<GroupQuestionAdapter.ViewHolder> {
-    protected ArrayList<GroupQuestionModel> datas;
+    protected ArrayList<GroupQuestion> datas;
 
-    public GroupQuestionAdapter(ArrayList<GroupQuestionModel> datas){
+    public GroupQuestionAdapter(ArrayList<GroupQuestion> datas){
         this.datas = datas;
     }
 
@@ -29,7 +29,7 @@ public class GroupQuestionAdapter extends RecyclerView.Adapter<GroupQuestionAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        GroupQuestionModel data = datas.get(position);
+        GroupQuestion data = datas.get(position);
         holder.type.setText(data.getType());
     }
 
@@ -38,7 +38,7 @@ public class GroupQuestionAdapter extends RecyclerView.Adapter<GroupQuestionAdap
         return datas.size();
     }
 
-    public void CustomAdapter(ArrayList<GroupQuestionModel> datas) {
+    public void CustomAdapter(ArrayList<GroupQuestion> datas) {
         this.datas = datas;
     }
 
@@ -49,7 +49,7 @@ public class GroupQuestionAdapter extends RecyclerView.Adapter<GroupQuestionAdap
             super(view);
             // Define click listener for the ViewHolder's View
 
-            type = (TextView) view.findViewById(R.id.type);
+            type = view.findViewById(R.id.type);
         }
 
         public TextView getTextView() {
