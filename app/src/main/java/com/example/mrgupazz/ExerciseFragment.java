@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExerciseFragment extends Fragment {
-    ArrayList<GroupQuestion> groupQuestionList = new ArrayList<>();
     GroupQuestionAdapter groupQuestionAdapter;
     RecyclerView recyclerView;
     @Nullable
@@ -46,6 +45,7 @@ public class ExerciseFragment extends Fragment {
     }
 
     public void getData(){
+        ArrayList<GroupQuestion> groupQuestionList = new ArrayList<>();
         RequestQueue requestQueue;
         requestQueue = Volley.newRequestQueue(getContext());
         String url = "https://mrgupazzapi.pribadi-gymnas-2911.workers.dev/group-question";

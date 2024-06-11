@@ -5,11 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:outlineSpotShadowColor="@color/primary_white"
-    android:padding="5dp">
+    android:paddingHorizontal="5dp">
+
+    <TextView
+        android:id="@+id/group_question_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <androidx.cardview.widget.CardView
+            android:id="@+id/question"
             android:layout_width="76dp"
             android:layout_height="76dp"
-            android:layout_margin="10dp"
             app:cardBackgroundColor="@color/secondary_yellow"
             app:cardCornerRadius="76dp">
 
@@ -28,19 +39,29 @@
                 android:outlineSpotShadowColor="@color/primary_white"
                 app:cardBackgroundColor="@color/secondary_blue_2"
                 app:cardCornerRadius="76dp">
-
                 <ImageView
+                    android:id="@+id/group_question_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_ear" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="6dp"
+            android:layout_height="24dp"
+            android:background="#E2E2E2"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="76dp">
         <TextView
             android:id="@+id/type"
             style="@style/Text.SemiBold.16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
 </LinearLayout>
