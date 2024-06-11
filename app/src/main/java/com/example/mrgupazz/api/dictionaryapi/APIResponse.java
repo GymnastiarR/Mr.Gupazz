@@ -4,7 +4,7 @@ import java.util.List;
 
 public class APIResponse {
     String word = "";
-    List<Phonetics> phonetics= null;
+    String phonetic = "";
     List<Meanings> meanings= null;
 
     public List<Meanings> getMeanings() {
@@ -23,12 +23,11 @@ public class APIResponse {
         this.word = word;
     }
 
-    public List<Phonetics> getPhonetics() {
-        return phonetics;
+    public String getPhonetic() {
+        return phonetic;
     }
 
-    public void setPhonetics(List<Phonetics> phonetics) {
-        this.phonetics = phonetics;
+    public void setPhonetic(String phonetic) {
+        this.phonetic = phonetic;
     }
-
 }

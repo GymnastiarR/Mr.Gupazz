@@ -30,9 +30,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -48,4 +45,5 @@ dependencies {
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
 }

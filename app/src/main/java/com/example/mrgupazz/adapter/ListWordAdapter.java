@@ -1,31 +1,68 @@
 package com.example.mrgupazz.adapter;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.mrgupazz.R;
+import com.example.mrgupazz.api.wordapi.Word;
+
+import java.util.ArrayList;
+
 public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ListViewHolder> {
+    private ArrayList<Word> listWord;
+    private OnItemClickCallback onItemClickCallback;
+
+    public ListWordAdapter(ArrayList<Word> list){
+        this.listWord = list;
+    }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.word_list_item,parent,false);
+        return new ListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
+        Word word = listWord.get(position);
+        holder.tvKata.setText(word.getWord());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickCallback != null) {
+                    onItemClickCallback.onItemClicked(listWord.get(holder.getAdapterPosition()));
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listWord.size();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
+        TextView tvKata;
+
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvKata = itemView.findViewById(R.id.tv_kata);
         }
+    }
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Word data);
     }
 }
