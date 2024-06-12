@@ -61,14 +61,13 @@
         <item name="android:layout_width">142dp</item>
         <item name="android:fontFamily">@font/inter_semi_bold</item>
         <item name="android:textColor">@color/primary_white</item>
-        <item name="layout_constraintWidth_percent">0.9</item>
     </style>
 
-    <style name="SmallButton.Blue" parent="MediumButton">
+    <style name="SmallButton.Blue" parent="SmallButton">
         <item name="android:backgroundTint">@color/secondary_shade_1</item>
     </style>
 
-    <style name="SmallButton.LightBlue" parent="MediumButton">
+    <style name="SmallButton.LightBlue" parent="SmallButton">
         <item name="android:backgroundTint">@color/secondary_blue_2</item>
     </style>
     <!-- BUTTON -->
