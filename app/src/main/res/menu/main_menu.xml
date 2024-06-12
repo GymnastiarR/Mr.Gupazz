@@ -7,9 +7,9 @@
         android:icon="@drawable/ic_learning"
         android:title="@string/menu_learning" />
     <item android:id="@+id/ai_assistant"
-        android:icon="@drawable/ic_learning"
+        android:icon="@drawable/ic_headphone"
         android:title="@string/menu_ai_assistant" />
     <item android:id="@+id/profile"
-        android:icon="@drawable/ic_learning"
-        android:title="@string/menu_ai_assistant" />
+        android:icon="@drawable/ic_person"
+        android:title="@string/profile" />
 </menu>

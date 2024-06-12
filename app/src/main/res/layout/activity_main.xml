@@ -14,4 +14,11 @@
         android:layout_height="match_parent"
         android:name="com.example.mrgupazz.ExerciseFragment" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/main_menu"
+        app:labelVisibilityMode="labeled"/>
+
   </androidx.constraintlayout.widget.ConstraintLayout>
