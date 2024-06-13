@@ -1,14 +1,14 @@
 package com.example.mrgupazz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class ProfileActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ProfileSettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.profile_setting_activity);
     }
 }
