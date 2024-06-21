@@ -1,0 +1,30 @@
+<!-- res/layout/item_alphabet.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/background_alphabet">
+
+    <TextView
+        android:id="@+id/letter"
+        style="@style/Text.Bold24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/primary_blue"
+        />
+
+    <TextView
+        android:id="@+id/word_count"
+        style="@style/Text.SemiBold.12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/letter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/primary_blue"
+        android:gravity="center_horizontal" />
+
+</RelativeLayout>
