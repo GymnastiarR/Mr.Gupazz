@@ -29,7 +29,7 @@ public class ListLearningAdapter extends RecyclerView.Adapter<ListLearningAdapte
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_learning_main, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item_learning, parent, false);
         return new ListViewHolder(view);
     }
 
