@@ -9,9 +9,9 @@ public class LearningData {
     };
 
     private static String[] alphabetDetails = {
-            "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words",
-            "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words",
-            "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words", "1581 Words"
+            "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words",
+            "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words",
+            "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words", "20 Words"
     };
 
     static ArrayList<Learning> getListData(String[] alphabets) {

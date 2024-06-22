@@ -1,6 +1,8 @@
 // ListLearningAdapter.java
 package com.example.mrgupazz.adapter;
 
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mrgupazz.CompletingActivity;
 import com.example.mrgupazz.R;
 import com.example.mrgupazz.api.learningapi.Learning;
 
@@ -39,6 +42,11 @@ public class ListLearningAdapter extends RecyclerView.Adapter<ListLearningAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CompletingActivity.class);
+                intent.putExtra("EXTRA_LETTER", learning.getNames());
+//                intent.putExtra("EXTRA_WORD_COUNT", learning.getDetails());
+                v.getContext().startActivity(intent);
+
                 if (onItemClickCallback != null) {
                     onItemClickCallback.onItemClicked(listWord.get(holder.getAdapterPosition()));
                 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -19,12 +20,18 @@
         <activity
             android:name=".InitialActivity"
             android:exported="false" />
+        <activity android:name="ListeningActivity"
+            android:exported="false"/>
         <activity
             android:name=".signup"
             android:exported="false" />
         <activity
             android:name=".login"
             android:exported="false" />
+        <activity
+            android:name=".LearningWordActivity"
+            android:exported="false"/>
+
 
         <activity
             android:name=".CompletingActivity"
@@ -32,6 +39,9 @@
         <activity
             android:name=".WritingActivity"
             android:exported="false" />
+        <activity
+            android:name=".ProfileSettingFragment"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
