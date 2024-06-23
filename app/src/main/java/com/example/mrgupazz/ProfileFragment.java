@@ -50,13 +50,13 @@ public class ProfileFragment extends Fragment {
         imgEditProfile = view.findViewById(R.id.img_editProfile);
         showData();
 
-        imgEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent moveWithNoData = new Intent(getActivity(), ProfileSettingActivity.class);
-                startActivity(moveWithNoData);
-            }
-        });
+//        imgEditProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent moveWithNoData = new Intent(getActivity(), ProfileSettingActivity.class);
+//                startActivity(moveWithNoData);
+//            }
+//        });
 
         return view;
     }

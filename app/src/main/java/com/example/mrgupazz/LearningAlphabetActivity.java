@@ -37,13 +37,13 @@ public class LearningAlphabetActivity extends AppCompatActivity {
         showRecyclerList();
 
         imgBack = findViewById(R.id.img_back);
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent moveWithNoData = new Intent(LearningAlphabetActivity.this, LearningActivity.class);
-                startActivity(moveWithNoData);
-            }
-        });
+//        imgBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent moveWithNoData = new Intent(LearningAlphabetActivity.this, LearningActivity.class);
+//                startActivity(moveWithNoData);
+//            }
+//        });
 
     }
 

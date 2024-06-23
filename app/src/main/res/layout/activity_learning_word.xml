@@ -112,25 +112,4 @@
         android:text="Dermawan"
         android:textColor="@color/secondary_shade_1" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_previous"
-            style="@style/SmallButton.LightBlue"
-            android:layout_marginHorizontal="30dp"
-            android:text="previous" />
-
-        <Button
-            android:id="@+id/btn_next"
-            style="@style/SmallButton.Blue"
-            android:layout_marginHorizontal="30dp"
-            android:text="next" />
-
-    </LinearLayout>
-
 </LinearLayout>
