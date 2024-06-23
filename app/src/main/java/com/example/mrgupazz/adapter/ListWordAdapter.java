@@ -8,18 +8,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.mrgupazz.R;
 import com.example.mrgupazz.api.wordapi.Word;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ListViewHolder> {
     private ArrayList<Word> listWord;
+    private ArrayList<Word> listWordFull;
     private OnItemClickCallback onItemClickCallback;
 
     public ListWordAdapter(ArrayList<Word> list){
         this.listWord = list;
+        this.listWordFull = new ArrayList<>(list);
     }
 
     @NonNull
@@ -64,5 +66,21 @@ public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ListVi
 
     public interface OnItemClickCallback {
         void onItemClicked(Word data);
+    }
+
+    // Method to filter the list
+    public void filter(String text) {
+        listWord.clear();
+        if (text.isEmpty()) {
+            listWord.addAll(listWordFull);
+        } else {
+            text = text.toLowerCase();
+            for (Word item : listWordFull) {
+                if (item.getWord().toLowerCase().contains(text)) {
+                    listWord.add(item);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 }

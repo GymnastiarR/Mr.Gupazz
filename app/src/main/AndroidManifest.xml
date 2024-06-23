@@ -18,7 +18,7 @@
             android:name=".LearningWordActivity"
             android:exported="false" />
         <activity
-            android:name=".LearningAlphabetActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".InitialActivity"
@@ -36,7 +36,7 @@
             android:name=".WritingActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LearningAlphabetActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
