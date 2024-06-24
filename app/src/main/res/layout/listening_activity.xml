@@ -1,89 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".WritingActivity"
+    android:fillViewport="true"
+    android:background="@color/primary_white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="20dp">
+            <ImageButton
+                android:id="@+id/back_button"
+                android:background="@color/primary_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cross"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Listening"
+                style="@style/Text.SemiBold.20sp"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:paddingHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_bar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp">
+                    <ImageView
+                        android:id="@+id/main_image"
+                        android:layout_width="349dp"
+                        android:layout_height="348dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_listening"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/play_sound"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/img_listening_sound"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_main_image"
+                    app:layout_constraintStart_toStartOf="@+id/iv_main_image"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_main_image" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/option_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    style="@style/LongButton"
+                    android:backgroundTint="@color/button_background_color"
+                    app:cornerRadius="10dp"
+                    android:text="Eat"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/option_two"
+                    style="@style/LongButton"
+                    app:cornerRadius="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/button_background_color"
+                    android:text="Drink"/>
+            </LinearLayout>
+            <RadioGroup
+                android:id="@+id/radio_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+                <RadioButton
+                    android:id="@+id/radio_option_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radio_option_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/tv_title"
-        style="@style/Text.SemiBold.24sp"
-        android:layout_width="337dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center_horizontal"
-        android:text="Listening"
-
-        android:textColor="@color/secondary_shade_1"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/img_listening_sound"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/img_listening_x"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_title"
-        app:layout_constraintTop_toTopOf="@+id/tv_title" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="349dp"
-        android:layout_height="348dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/img_listening"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
-
-    <Button
-        android:id="@+id/btn_1"
-        style="@style/RegularButton"
-        android:layout_marginTop="16dp"
-        android:text="flower"
-        android:textColor="@color/secondary_shade_1"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/btn_2"
-        style="@style/RegularButton"
-        android:layout_marginTop="16dp"
-        android:text="blower"
-        android:textColor="@color/secondary_shade_1"
-        app:layout_constraintEnd_toEndOf="@+id/btn_1"
-        app:layout_constraintStart_toStartOf="@+id/btn_1"
-        app:layout_constraintTop_toBottomOf="@+id/btn_1" />
-
-    <Button
-        android:id="@+id/btn_3"
-        style="@style/LongButton"
-        android:layout_marginTop="12dp"
-        android:text="Check"
-        app:layout_constraintEnd_toEndOf="@+id/btn_2"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/btn_2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_2" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/check_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Check"
+                    app:cornerRadius="10dp"
+                    style="@style/MediumButton.Blue"/>
+            </LinearLayout>
+        </LinearLayout>
+        <include
+            android:id="@+id/correct_notif"
+            layout="@layout/true_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <include
+            android:id="@+id/wrong_notif"
+            layout="@layout/wrong_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_gravity="bottom"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

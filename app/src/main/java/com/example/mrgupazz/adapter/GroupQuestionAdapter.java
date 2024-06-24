@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mrgupazz.CompletingActivity;
+import com.example.mrgupazz.ListeningActivity;
 import com.example.mrgupazz.R;
 import com.example.mrgupazz.WritingActivity;
 import com.example.mrgupazz.api.groupquestion.GroupQuestion;
@@ -79,7 +80,9 @@ public class GroupQuestionAdapter extends RecyclerView.Adapter<GroupQuestionAdap
                 cls = WritingActivity.class;
             } else if (data.getType().equals("completing")) {
                 cls = CompletingActivity.class;
-            }else{
+            } else if (data.getType().equals("listening")) {
+                cls = ListeningActivity.class;
+            } else{
                 cls = CompletingActivity.class;
             }
 
