@@ -10,5 +10,6 @@
     <string name="check">Check</string>
     <string name="word">Word</string>
     <!-- TODO: Remove or change this placeholder text -->
-
+    <string name="profile">Profile</string>
+    <string name="type_here">Type here . . .</string>
 </resources>

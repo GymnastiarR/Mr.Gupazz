@@ -43,6 +43,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.fragment:fragment:1.6.2")
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.android.volley:volley:1.2.1")
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
     implementation ("com.github.bumptech.glide:glide:4.11.0")
