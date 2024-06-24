@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/exercise"
+    <item android:id="@+id/menu1"
         android:icon="@drawable/ic_exercise"
         android:title="@string/menu_exercise"/>
-    <item android:id="@+id/learning"
+    <item android:id="@+id/menu2"
         android:icon="@drawable/ic_learning"
         android:title="@string/menu_learning" />
-    <item android:id="@+id/ai_assistant"
+    <item android:id="@+id/menu3"
         android:icon="@drawable/ic_headphone"
         android:title="@string/menu_ai_assistant" />
-    <item android:id="@+id/profile"
+    <item android:id="@+id/menu4"
         android:icon="@drawable/ic_person"
         android:title="@string/profile" />
 </menu>
