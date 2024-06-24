@@ -33,7 +33,8 @@ public class ProfileSettingFragment extends Fragment {
     ImageView imgEditFullName;
     Button btnSave;
     ProgressDialog loading;
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd5bW5hc0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciJ9.wg-RBSQNGjzo21GwpPWbaFqU0QEudhw8twq9b2g6PxA";
+
+    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhamFycml6a2lAZ21haWwuY29tIiwicm9sZSI6InVzZXIifQ.Tau42VQ3r3fKh-W3Hyi8in_lkMflTR9oJxQwouZX39w";
     private static final String TAG = "ProfileSettingFragment";
     private boolean isFullNameEditable = false;
 
@@ -106,7 +107,7 @@ public class ProfileSettingFragment extends Fragment {
                     Toast.makeText(getActivity(), "Data berhasil dimuat", Toast.LENGTH_SHORT).show();
 
                 } catch (JSONException e) {
-                    Log.e(TAG, "JSON Parsing error: " + e.getMessage());
+                    Log.e(TAG, "Error Getting Data: " + e.getMessage());
                     loading.dismiss();
                     Toast.makeText(getActivity(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }

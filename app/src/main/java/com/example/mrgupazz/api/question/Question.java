@@ -8,6 +8,17 @@ public class Question {
 
     protected String answer;
     protected ArrayList<Option> options;
+    protected String imageUrl;
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public void addOption(Option option){
         this.options.add(option);
     }
