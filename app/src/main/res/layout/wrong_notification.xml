@@ -17,7 +17,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_ceklis_dua"
+                android:src="@drawable/baseline_clear_24"
                 android:layout_gravity="center"/>
         </com.google.android.material.card.MaterialCardView>
         <TextView
@@ -29,13 +29,6 @@
             android:text="Wrong!"
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
-    <TextView
-        android:layout_marginBottom="20dp"
-        android:textSize="20dp"
-        android:textColor="@color/primary_white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meaning" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_wrong_button"
         android:layout_marginHorizontal="22dp"

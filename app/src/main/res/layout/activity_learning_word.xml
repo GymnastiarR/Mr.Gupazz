@@ -95,22 +95,7 @@
         android:text="ˈjen(ə)rəs"
         android:textColor="@color/secondary_shade_1" />
 
-    <TextView
-        android:id="@+id/tv_meaning"
-        style="@style/Text.SemiBold.20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Meaning"
-        android:textColor="@color/secondary_shade_6" />
 
-    <TextView
-        android:id="@+id/tv_bahasa"
-        style="@style/Text.SemiBold.24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Dermawan"
-        android:textColor="@color/secondary_shade_1" />
+
 
 </LinearLayout>

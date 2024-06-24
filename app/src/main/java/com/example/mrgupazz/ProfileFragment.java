@@ -4,7 +4,9 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,7 +39,7 @@ public class ProfileFragment extends Fragment {
     TextView tvName, tvSince;
     ImageView imgEditProfile;
     ProgressDialog loading;
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd5bW5hc0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciJ9.wg-RBSQNGjzo21GwpPWbaFqU0QEudhw8twq9b2g6PxA";
+
     private static final String TAG = "ProfileFragment";
 
     @SuppressLint("MissingInflatedId")
@@ -45,23 +47,26 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+
         tvName = view.findViewById(R.id.tv_name);
         tvSince = view.findViewById(R.id.tv_since);
         imgEditProfile = view.findViewById(R.id.img_editProfile);
-        showData();
+        showData(token);
 
-//        imgEditProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent moveWithNoData = new Intent(getActivity(), ProfileSettingActivity.class);
-//                startActivity(moveWithNoData);
-//            }
-//        });
+        imgEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveWithNoData = new Intent(getActivity(), ProfileSettingActivity.class);
+                startActivity(moveWithNoData);
+            }
+        });
 
         return view;
     }
 
-    private void showData() {
+    private void showData(String token) {
         loading = ProgressDialog.show(getActivity(), "Memuat Data...", "Tunggu...");
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         String url = "https://mrgupazzapi.pribadi-gymnas-2911.workers.dev/profile";

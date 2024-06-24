@@ -1,14 +1,15 @@
 package com.example.mrgupazz;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,30 +29,33 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProfileSettingFragment extends Fragment {
-    EditText etFullName, etEmail, etPassword, etUsername;
-    ImageView imgEditFullName;
-    Button btnSave;
+public class ProfileSettingActivity extends AppCompatActivity {
+    EditText etFullName, etEmail, etPassword;
+    ImageView imgEditFullName, imgBack;
+    Button btnSave, btnLogout;
     ProgressDialog loading;
-
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhamFycml6a2lAZ21haWwuY29tIiwicm9sZSI6InVzZXIifQ.Tau42VQ3r3fKh-W3Hyi8in_lkMflTR9oJxQwouZX39w";
-    private static final String TAG = "ProfileSettingFragment";
+    private static final String TAG = "ProfileSettingActivity";
     private boolean isFullNameEditable = false;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profilesetting, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile_setting);
 
-        etFullName = view.findViewById(R.id.et_FullName);
-        etEmail = view.findViewById(R.id.et_Email);
-        etPassword = view.findViewById(R.id.et_password);
-        etUsername = view.findViewById(R.id.et_Username);
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
 
-        imgEditFullName = view.findViewById(R.id.imageView7);
-        btnSave = view.findViewById(R.id.btn_1);
+        etFullName = findViewById(R.id.et_FullName);
+        etEmail = findViewById(R.id.et_Email);
+        etPassword = findViewById(R.id.et_password);
 
+        imgEditFullName = findViewById(R.id.imageView7);
+        imgBack = findViewById(R.id.imageView6);
 
-        showData();
+        btnSave = findViewById(R.id.btn_1);
+        btnLogout = findViewById(R.id.btn_2);
+
+        showData(token);
 
         imgEditFullName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,14 +69,38 @@ public class ProfileSettingFragment extends Fragment {
             }
         });
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveFullName();
+                Intent moveWithNoData = new Intent(ProfileSettingActivity.this, ProfileFragment.class);
+                startActivity(moveWithNoData);
             }
         });
 
-        return view;
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveFullName(token);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                Intent moveWithNoData = new Intent(ProfileSettingActivity.this, login.class);
+                startActivity(moveWithNoData);
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveFullName(token);
+            }
+        });
     }
 
     private void enableEditText(EditText editText) {
@@ -80,14 +108,15 @@ public class ProfileSettingFragment extends Fragment {
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
         editText.requestFocus();
     }
+
     private void disableEditText(EditText editText) {
         editText.setFocusable(false);
         editText.setInputType(InputType.TYPE_NULL);
     }
 
-    private void showData() {
-        loading = ProgressDialog.show(getActivity(), "Memuat Data...", "Tunggu...");
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+    private void showData(String token) {
+        loading = ProgressDialog.show(this, "Memuat Data...", "Tunggu...");
+        RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://mrgupazzapi.pribadi-gymnas-2911.workers.dev/profile";
 
         StringRequest stringRequest = new StringRequest(
@@ -99,17 +128,15 @@ public class ProfileSettingFragment extends Fragment {
                     String fullName = jo.getJSONObject("data").getString("name");
                     String email = jo.getJSONObject("data").getString("email");
 
-                    etUsername.setText(fullName);
                     etFullName.setText(fullName);
                     etEmail.setText(email);
                     etPassword.setText("*********");
                     loading.dismiss();
-                    Toast.makeText(getActivity(), "Data berhasil dimuat", Toast.LENGTH_SHORT).show();
 
                 } catch (JSONException e) {
                     Log.e(TAG, "Error Getting Data: " + e.getMessage());
                     loading.dismiss();
-                    Toast.makeText(getActivity(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSettingActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -117,7 +144,7 @@ public class ProfileSettingFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Request error: " + error.toString());
                 loading.dismiss();
-                Toast.makeText(getActivity(), "Gagal memuat data: " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileSettingActivity.this, "Gagal memuat data: " + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -131,9 +158,9 @@ public class ProfileSettingFragment extends Fragment {
         queue.add(stringRequest);
     }
 
-    private void saveFullName() {
-        loading = ProgressDialog.show(getActivity(), "Menyimpan Data...", "Tunggu...");
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+    private void saveFullName(String token) {
+        loading = ProgressDialog.show(this, "Menyimpan Data...", "Tunggu...");
+        RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://mrgupazzapi.pribadi-gymnas-2911.workers.dev/profile";
 
         StringRequest stringRequest = new StringRequest(
@@ -146,13 +173,13 @@ public class ProfileSettingFragment extends Fragment {
 
                     etFullName.setText(fullName);
                     loading.dismiss();
-                    Toast.makeText(getActivity(), "Nama berhasil diperbarui", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSettingActivity.this, "Nama berhasil diperbarui", Toast.LENGTH_SHORT).show();
                     etFullName.setFocusable(false);
-                    showData();
+                    showData(token);
                 } catch (JSONException e) {
                     Log.e(TAG, "JSON Parsing error: " + e.getMessage());
                     loading.dismiss();
-                    Toast.makeText(getActivity(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSettingActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -160,7 +187,7 @@ public class ProfileSettingFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Request error: " + error.toString());
                 loading.dismiss();
-                Toast.makeText(getActivity(), "Gagal memperbarui nama: " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileSettingActivity.this, "Gagal memperbarui nama: " + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -185,5 +212,4 @@ public class ProfileSettingFragment extends Fragment {
 
         queue.add(stringRequest);
     }
-
 }
