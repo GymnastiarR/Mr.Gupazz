@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileFragment">
 
     <ImageView
         android:id="@+id/img_profile"
@@ -29,30 +29,17 @@
         app:layout_constraintTop_toBottomOf="@+id/img_profile" />
 
     <TextView
-        android:id="@+id/tv_id"
+        android:id="@+id/tv_since"
         style="@style/Text.Regular.15sp"
-        android:textColor="@color/secondary_shade_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="hanamumtazz"
+        android:layout_marginTop="20dp"
+        android:text="Join Since March 2024"
+        android:textColor="@color/secondary_shade_2"
         app:layout_constraintEnd_toEndOf="@+id/tv_name"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-    <TextView
-        android:id="@+id/tv_since"
-        style="@style/Text.Regular.15sp"
-        android:textColor="@color/secondary_shade_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Join Since March 2024"
-        app:layout_constraintEnd_toEndOf="@+id/tv_id"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_id"
-        app:layout_constraintTop_toBottomOf="@+id/tv_id" />
 
     <TextView
         android:id="@+id/tv_progress"
@@ -108,7 +95,7 @@
         app:srcCompat="@drawable/kaktus" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_editProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
