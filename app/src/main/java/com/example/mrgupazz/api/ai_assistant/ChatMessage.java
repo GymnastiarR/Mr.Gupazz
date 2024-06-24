@@ -2,19 +2,13 @@ package com.example.mrgupazz.api.ai_assistant;
 
 public class ChatMessage {
     private String message;
-    private boolean isSentByUser;
 
-    public ChatMessage(String message, boolean isSentByUser) {
+    public ChatMessage(String message) {
         this.message = message;
-        this.isSentByUser = isSentByUser;
     }
 
     public String getMessage() {
         return message;
-    }
-
-    public boolean isSentByUser() {
-        return isSentByUser;
     }
 }
 
