@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_component"
+    app:startDestination="@id/menu1">
+
+    <fragment
+        android:id="@+id/menu1"
+        android:name="com.example.mrgupazz.ExerciseFragment"
+        android:label="menu1"
+        tools:layout="@layout/fragment_exercise"/>
+
+    <fragment
+        android:id="@+id/menu2"
+        android:name="com.example.mrgupazz.LearningFragment"
+        android:label="menu2"
+        tools:layout="@layout/fragment_learning"/>
+
+    <fragment
+        android:id="@+id/menu3"
+        android:name="com.example.mrgupazz.AiAssistantFragment"
+        android:label="menu3"
+        tools:layout="@layout/fragment_ai_assistant"/>
+
+    <fragment
+        android:id="@+id/menu4"
+        android:name="com.example.mrgupazz.ProfileFragment"
+        android:label="menu4"
+        tools:layout="@layout/fragment_profile"/>
+
+</navigation>

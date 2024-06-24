@@ -1,33 +1,38 @@
-// MainActivity.java
 package com.example.mrgupazz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
+
+import com.example.mrgupazz.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String token = getSharedPreferences("user_prefs", MODE_PRIVATE).getString("token", null);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+
         if(token == null){
             Intent intent = new Intent(this, login.class);
             startActivity(intent);
             return;
         }
-        setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            LearningFragment fragment = new LearningFragment();
-//            transaction.replace(R.id.fragment_container, fragment);
-            ProfileSettingFragment fragment = new ProfileSettingFragment();
-//            transaction.replace(R.id.fragment_container, fragment);
-//            AiAssistantFragment fragment = new AiAssistantFragment();
-//            transaction.replace(R.id.fragment_container,fragment);
-            transaction.commit();
-        }
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(binding.fragmentContainerView.getId());
+
+        NavigationUI.setupWithNavController(binding.bottomNavigationView, navHostFragment.getNavController());
     }
 }

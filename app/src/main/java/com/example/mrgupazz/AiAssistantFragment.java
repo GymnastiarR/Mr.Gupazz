@@ -55,9 +55,6 @@ public class AiAssistantFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ai_assistant, container, false);
 
-        chatMessages.add(new ChatMessage("Ini Pesan Dua"));
-        chatMessages.add(new ChatMessage("Ini Pesan Tiga"));
-
         listView = view.findViewById(R.id.chats);
 
         chatAdapter = new ChatAdapter(getContext(), chatMessages);
@@ -134,7 +131,7 @@ public class AiAssistantFragment extends Fragment {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<>();
-                headers.put("Authorization", "Bearer");
+                headers.put("Authorization", "Bearer ");
                 return headers;
             }
         };
