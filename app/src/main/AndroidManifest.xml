@@ -18,9 +18,6 @@
             android:name=".LearningWordActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".InitialActivity"
             android:exported="false" />
         <activity
