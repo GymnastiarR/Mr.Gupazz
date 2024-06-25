@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -25,6 +26,8 @@ import com.example.mrgupazz.api.groupquestion.GroupQuestion;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +43,10 @@ public class ExerciseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         recyclerView = view.findViewById(R.id.group_question);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        TextView date =  view.findViewById(R.id.date);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy");
+        String currentDate = LocalDateTime.now().format(formatter);
+        date.setText(currentDate);
         getData();
         return view;
     }

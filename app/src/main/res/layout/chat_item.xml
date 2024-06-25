@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="12dp">
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
         >
-        <TextView
-            android:id="@+id/chat_bubble"
-            android:padding="12dp"
+        <ImageView
+            android:id="@+id/icon_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Halo"/>
+            android:src="@drawable/ic_person"/>
     </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/chat_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Halo"/>
 </LinearLayout>

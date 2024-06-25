@@ -7,6 +7,9 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -23,12 +26,24 @@ public class MainActivity extends AppCompatActivity {
         String token = sharedPreferences.getString("token", null);
 
         if(token == null){
-            Intent intent = new Intent(this, login.class);
+            Intent intent = new Intent(this, InitialActivity.class);
             startActivity(intent);
             return;
         }
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            String targetFragment = intent.getStringExtra("targetFragment");
+            if (targetFragment != null && targetFragment.equals("LearningFragment")) {
+                NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
+                // Pindah ke fragment tujuan
+                navController.navigate(R.id.menu2);
+                return;
+            }
+        }
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(binding.fragmentContainerView.getId());

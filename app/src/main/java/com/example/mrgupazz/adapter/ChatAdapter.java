@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,13 @@ public class ChatAdapter extends ArrayAdapter<ChatMessage> {
 
         // Lookup view for data population
         TextView textView = convertView.findViewById(R.id.chat_bubble);
+        ImageView icon = convertView.findViewById(R.id.icon_chat);
+
+        if(position % 2 == 0 ){
+            icon.setImageDrawable(getContext().getDrawable(R.drawable.ic_person));
+        }else{
+            icon.setImageDrawable(getContext().getDrawable(R.drawable.ic_headphone));
+        }
 
         // Populate the data into the template view using the data object
         textView.setText(item.getMessage());

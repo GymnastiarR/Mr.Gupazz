@@ -125,7 +125,8 @@ public class LearningAlphabetActivity extends AppCompatActivity {
 
         imgBack = findViewById(R.id.img_back);
          imgBack.setOnClickListener(v -> {
-             Intent moveWithNoData = new Intent(LearningAlphabetActivity.this, LearningFragment.class);
+             Intent moveWithNoData = new Intent(this, MainActivity.class);
+             moveWithNoData.putExtra("targetFragment", "LearningFragment");
              startActivity(moveWithNoData);
          });
 
